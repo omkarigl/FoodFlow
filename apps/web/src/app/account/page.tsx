@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { useSessionToken } from '@/lib/auth-client';
 import { toRupees } from '@/lib/pricing';
+import { browserSupabase } from '@/lib/supabase';
 
 type Order = {
   id: string;
@@ -14,7 +15,7 @@ type Order = {
 };
 
 export default function AccountPage() {
-  const { token, supabase } = useSessionToken();
+  const { token } = useSessionToken();
   const [studentId, setStudentId] = useState('');
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
@@ -75,7 +76,7 @@ export default function AccountPage() {
           <button
             type="button"
             className="rounded border px-4 py-2"
-            onClick={() => supabase?.auth.signOut()}
+            onClick={() => browserSupabase().auth.signOut()}
           >
             Logout
           </button>
