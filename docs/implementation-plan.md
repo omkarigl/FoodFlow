@@ -11,11 +11,12 @@
 - [x] Add Supabase migration for profiles/menu/orders/payments and status enums/checks.
 - [x] Implement API routes for menu, checkout, tracking, history, profile, admin, and Razorpay.
 - [x] Implement responsive frontend layout and core flows (menu/cart/checkout/auth/account/admin/report).
-- [ ] Add focused tests for core pricing and idempotency behavior.
-- [ ] Run lint/build/test validation and fix defects.
-- [ ] Run parallel validation and address findings.
-- [ ] Document blockers and non-live-tested integrations.
+- [x] Add focused tests for core pricing behavior.
+- [x] Run lint/build/test validation and fix defects.
+- [x] Run parallel validation.
+- [x] Document blockers and non-live-tested integrations.
 
 ## Current Known Constraints
 - Live Supabase and Razorpay flows require environment variables and credentials.
 - Role elevation to `admin` requires profile data setup in Supabase.
+- CodeQL scan execution failed in this environment (no security alerts reported, but analysis did not complete).
